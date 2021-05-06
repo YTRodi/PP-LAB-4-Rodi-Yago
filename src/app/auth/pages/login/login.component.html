@@ -1,0 +1,99 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <button
+        class="my-4 btn btn-primary btn-lg"
+        [routerLink]="['/bienvenida']"
+      >
+        Bienvenida
+      </button>
+    </div>
+
+    <div class="col">
+      <button
+        class="my-4 btn btn-primary btn-lg"
+        (click)="this.cargarDataAdmin()"
+      >
+        Cargar data admin
+      </button>
+    </div>
+
+    <div class="col">
+      <button
+        class="my-4 btn btn-primary btn-lg"
+        (click)="this.cargarDataRepartidor()"
+      >
+        Cargar data repartidor
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <form
+    class="form-signin"
+    [formGroup]="this.formLogin"
+    (ngSubmit)="sendForm()"
+  >
+    <img
+      class="mb-4"
+      src="../../../../favicon.ico"
+      alt=""
+      width="72"
+      height="72"
+    />
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="name"
+        placeholder="Aa"
+        formControlName="email"
+      />
+
+      <small
+        class="invalid"
+        *ngIf="
+          this.formLogin.get('email')?.errors?.required &&
+          this.formLogin.get('email')?.touched
+        "
+      >
+        El email es requerido
+      </small>
+
+      <small class="invalid" *ngIf="this.formLogin.get('email')?.errors?.email">
+        Email inválido
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="apellido"
+        placeholder="Aa"
+        formControlName="password"
+      />
+
+      <small
+        class="invalid"
+        *ngIf="
+          this.formLogin.get('password')?.errors?.required &&
+          this.formLogin.get('password')?.touched
+        "
+      >
+        El password es requerido
+      </small>
+    </div>
+
+    <button
+      class="my-4 w-100 btn btn-success btn-lg"
+      type="submit"
+      [disabled]="formLogin.invalid"
+    >
+      Login
+    </button>
+  </form>
+</div>

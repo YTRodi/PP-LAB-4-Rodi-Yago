@@ -1,0 +1,18 @@
+<div class="container">
+  <main>
+    <div class="row g-5 mt-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <app-country-table
+          (eventSelectedCountry)="this.loadSelectedCountry($event)"
+        >
+        </app-country-table>
+      </div>
+
+      <div class="col-md-7 col-lg-8">
+        <app-alta-repartidor
+          [selectedCountry]="this.selectedCountry"
+        ></app-alta-repartidor>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,31 @@
+<div class="container text-center">
+  <button class="my-4 btn btn-primary btn-lg" [routerLink]="['/auth/login']">
+    Ir a login
+  </button>
+
+  <div class="m-0 vh-80 row justify-content-center align-items-center">
+    <app-spinner [isLoading]="!this.dataUser"></app-spinner>
+
+    <div class="card" style="width: 18rem" *ngIf="this.dataUser">
+      <img
+        [src]="this.dataUser.avatar_url"
+        class="card-img-top"
+        alt="User image"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ this.dataUser.name }}</h5>
+        <p class="card-text">Nombre de usuario: {{ this.dataUser.login }}</p>
+        <p class="card-text">
+          Donde encontrar este parcial
+
+          <a
+            href="https://github.com/YTRodi/PP-LAB-4-Rodi-Yago"
+            target="_blank"
+            rel="noopener"
+            >Link de repositorio</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

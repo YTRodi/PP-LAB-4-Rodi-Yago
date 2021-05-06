@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class CountryService {
+export class GithubService {
   constructor(private http: HttpClient) {
     console.log('Country service running!');
   }
 
-  getAllCountries() {
-    return this.http.get('https://restcountries.eu/rest/v2/regionalbloc/eu');
+  getData() {
+    return this.http.get('https://api.github.com/users/YTRodi');
   }
 }
