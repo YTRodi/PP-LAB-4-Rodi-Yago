@@ -1,11 +1,5 @@
 {
-  "targets": {
-    "pp-lab4": {
-      "hosting": {
-        "pp-lab4": [
-          "pp-lab4"
-        ]
-      }
-    }
+  "projects": {
+    "default": "pp-lab4"
   }
 }
