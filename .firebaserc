@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pp-lab4": {
+      "hosting": {
+        "pp-lab4": [
+          "pp-lab4"
+        ]
+      }
+    }
+  }
+}

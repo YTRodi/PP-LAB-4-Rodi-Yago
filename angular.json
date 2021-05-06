@@ -120,6 +120,10 @@
               "devServerTarget": "pp-lab4:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

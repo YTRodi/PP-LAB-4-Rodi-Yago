@@ -1,0 +1,128 @@
+<h2>{{ this.title }}</h2>
+
+<form [formGroup]="this.formActor" (ngSubmit)="sendForm()">
+  <div class="form-group">
+    <label for="name">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Aa"
+      formControlName="name"
+    />
+
+    <small
+      class="invalid"
+      *ngIf="
+        this.formActor.get('name')?.errors?.required &&
+        this.formActor.get('name')?.touched
+      "
+    >
+      El nombre es requerido
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="apellido">Apellido</label>
+    <input
+      type="text"
+      class="form-control"
+      id="apellido"
+      placeholder="Aa"
+      formControlName="lastName"
+    />
+
+    <small
+      class="invalid"
+      *ngIf="
+        this.formActor.get('lastName')?.errors?.required &&
+        this.formActor.get('lastName')?.touched
+      "
+    >
+      El apellido es requerido
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="age">Edad</label>
+    <input
+      type="number"
+      class="form-control"
+      id="age"
+      placeholder="18"
+      formControlName="age"
+    />
+
+    <small
+      class="invalid"
+      *ngIf="
+        this.formActor.get('age')?.errors?.required &&
+        this.formActor.get('age')?.touched
+      "
+    >
+      La edad es requerida
+    </small>
+
+    <small
+      class="invalid"
+      *ngIf="
+        this.formActor.get('age')?.errors?.min ||
+        this.formActor.get('age')?.errors?.max
+      "
+    >
+      La edad debe ser mínimo 18 y máximo 99
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="example@gmail.com"
+      formControlName="email"
+    />
+
+    <small
+      class="invalid"
+      *ngIf="
+        this.formActor.get('email')?.errors?.required &&
+        this.formActor.get('email')?.touched
+      "
+    >
+      El email es requerido
+    </small>
+
+    <small class="invalid" *ngIf="this.formActor.get('email')?.errors?.email">
+      El email no es válido
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Pais Natal (Elija de la lista)</label>
+  </div>
+
+  <div
+    class="card col-12"
+    style="max-width: 200px"
+    *ngIf="this.selectedCountry"
+  >
+    <img
+      [src]="this.selectedCountry?.flag"
+      class="card-img-top"
+      alt="image pais"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ this.selectedCountry?.name }}</h5>
+    </div>
+  </div>
+
+  <button
+    class="my-4 w-100 btn btn-primary btn-lg"
+    type="submit"
+    [disabled]="formActor.invalid || !this.selectedCountry"
+  >
+    Crear
+  </button>
+</form>

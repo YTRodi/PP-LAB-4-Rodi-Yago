@@ -1,0 +1,4 @@
+.table-scroll {
+  max-height: 263px;
+  overflow: scroll;
+}

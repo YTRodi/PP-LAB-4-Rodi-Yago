@@ -1,0 +1,8 @@
+.actor-td {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.actor-td:hover {
+  background-color: #6c757d;
+}

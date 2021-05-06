@@ -1,0 +1,40 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Lista de películas</h1>
+
+    <app-spinner [isLoading]="!this.movieList"></app-spinner>
+
+    <div class="table-scroll table-responsive" *ngIf="this.movieList">
+      <table class="table table-dark table-hover text-center">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Fecha estreno</th>
+            <th>Cantidad de público</th>
+            <th>Foto de película</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let movie of this.movieList" (click)="selectMovie(movie)">
+            <td>{{ movie.id }}</td>
+            <td>{{ movie.name }}</td>
+            <td>{{ movie.type }}</td>
+            <td>{{ movie.releaseDate }}</td>
+            <td>{{ movie.amountPublic }}</td>
+            <td>
+              <img
+                [src]="movie.image"
+                alt="Movie Image"
+                width="70"
+                height="40"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

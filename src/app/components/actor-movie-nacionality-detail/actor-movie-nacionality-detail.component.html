@@ -1,0 +1,21 @@
+<h2>{{ this.title }}</h2>
+
+<div>
+  <div *ngIf="!this.countryToShow">No hay un pais natal seleccionado!</div>
+
+  <div class="mb-3" *ngIf="this.countryToShow">
+    <p>Nombre: {{ this.countryToShow?.name }}</p>
+    <p>Nombre nativo:{{ this.countryToShow?.nativeName }}</p>
+    <p>Region: {{ this.countryToShow?.region }}</p>
+    <p>Gentilicio: {{ this.countryToShow?.demonym }}</p>
+    <p>Bandera:</p>
+    <img
+      [src]="this.countryToShow?.flag"
+      alt="Movie image"
+      width="200px"
+      alt="40"
+    />
+  </div>
+
+  <hr />
+</div>
