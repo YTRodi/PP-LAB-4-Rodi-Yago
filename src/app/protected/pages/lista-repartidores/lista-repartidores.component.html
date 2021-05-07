@@ -1,0 +1,22 @@
+<main role="main">
+  <!-- Jumbotron -->
+  <app-repartidor-tabla
+    [repartidorList]="this.repartidorList"
+    (eventSelectedRepartidor)="this.loadSelectedRepartidor($event)"
+  >
+  </app-repartidor-tabla>
+
+  <!-- Cards -->
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-4"></div>
+
+      <div class="col-md-4">
+        <app-repartidor-detail [repartidorToShow]="this.selectedRpartidor">
+        </app-repartidor-detail>
+      </div>
+
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</main>

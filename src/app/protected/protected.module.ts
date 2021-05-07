@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RepartidoresComponent } from './pages/repartidores/repartidores.component';
 import { CountryTableComponent } from './components/country-table/country-table.component';
+import { RepartidorTablaComponent } from './components/repartidor-tabla/repartidor-tabla.component';
+import { ListaRepartidoresComponent } from './pages/lista-repartidores/lista-repartidores.component';
+import { RepartidorDetailComponent } from './components/repartidor-detail/repartidor-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { CountryTableComponent } from './components/country-table/country-table.
     HomeComponent,
     RepartidoresComponent,
     CountryTableComponent,
+    RepartidorTablaComponent,
+    ListaRepartidoresComponent,
+    RepartidorDetailComponent,
   ],
   imports: [CommonModule, ProtectedRoutingModule, ReactiveFormsModule],
 })

@@ -1,0 +1,34 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Lista de Repartidores</h1>
+
+    <div class="table-scroll table-responsive" *ngIf="this.repartidorList">
+      <table class="table table-dark text-center">
+        <thead>
+          <tr>
+            <th>Dni</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Capacidad de transporte</th>
+            <th>Pais de origen</th>
+            <th>Unidad propia</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            *ngFor="let repartidor of this.repartidorList"
+            (click)="this.selectRepartidor(repartidor)"
+          >
+            <td>{{ repartidor.dni }}</td>
+            <td>{{ repartidor.nombre }}</td>
+            <td>{{ repartidor.edad }}</td>
+            <td>{{ repartidor.capacidadTransporte }}</td>
+            <td>{{ repartidor.unidadPropia }}</td>
+            <td>{{ repartidor.paisOrigen?.translations?.es }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

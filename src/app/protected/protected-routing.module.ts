@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AltaRepartidorComponent } from './components/alta-repartidor/alta-repartidor.component';
 import { RepartidoresComponent } from './pages/repartidores/repartidores.component';
+import { ListaRepartidoresComponent } from './pages/lista-repartidores/lista-repartidores.component';
 
 const routes: Routes = [
   {
@@ -10,6 +10,7 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: 'alta-repartidor', component: RepartidoresComponent },
+      { path: 'tabla-repartidores', component: ListaRepartidoresComponent },
       // { path: '**', redirectTo: 'alta-repartidor' },
     ],
   },

@@ -26,9 +26,9 @@ export class RepartidorService {
       .snapshotChanges()
       .pipe(
         map((actions) =>
-          actions.map((actor) => {
-            const id = actor.payload.doc.id;
-            const data = actor.payload.doc.data() as Repartidor;
+          actions.map((repartidor) => {
+            const id = repartidor.payload.doc.id;
+            const data = repartidor.payload.doc.data() as Repartidor;
 
             return { id, ...data };
           })
