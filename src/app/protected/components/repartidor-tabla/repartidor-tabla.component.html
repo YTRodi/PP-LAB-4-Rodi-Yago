@@ -10,8 +10,8 @@
             <th>Nombre</th>
             <th>Edad</th>
             <th>Capacidad de transporte</th>
-            <th>Pais de origen</th>
             <th>Unidad propia</th>
+            <th>Pais de origen</th>
           </tr>
         </thead>
 
@@ -24,7 +24,7 @@
             <td>{{ repartidor.nombre }}</td>
             <td>{{ repartidor.edad }}</td>
             <td>{{ repartidor.capacidadTransporte }}</td>
-            <td>{{ repartidor.unidadPropia }}</td>
+            <td>{{ repartidor.unidadPropia ? "Tiene" : "No tiene" }}</td>
             <td>{{ repartidor.paisOrigen?.translations?.es }}</td>
           </tr>
         </tbody>
