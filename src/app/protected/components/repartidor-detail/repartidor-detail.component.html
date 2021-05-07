@@ -11,12 +11,19 @@
       Capacidad de transporte: {{ this.repartidorToShow?.capacidadTransporte }}
     </p>
     <p>
-      Pais Origen: {{ this.repartidorToShow?.paisOrigen?.translations?.es }}
-    </p>
-    <p>
       Unidad propia:
       {{ this.repartidorToShow?.unidadPropia ? "Tiene" : "No tiene" }}
     </p>
+    <p>
+      Pais Origen: {{ this.repartidorToShow?.paisOrigen?.translations?.es }}
+    </p>
+
+    <p>Bandera:</p>
+    <img
+      [src]="this.repartidorToShow?.paisOrigen?.flag"
+      alt="Flag image"
+      width="200px"
+    />
   </div>
 
   <hr />
